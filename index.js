@@ -1,4 +1,5 @@
 const express = require('express');
+const fetch = require('node-fetch')
 // const apiRouter = require('./route/apiRoutes.js');
 const path = require('path');
 const dotEnv = require("dotenv");
@@ -43,7 +44,7 @@ const isPkg = process.hasOwnProperty('pkg')
 const host = 'http://localhost';
 const target = `${host}:${PORT}`;
 const pathDest = isPkg ? path.join(process.execPath, '..', '..') : path.join(__dirname, '..', '..')
-const ipMiddleware = function(req, res, next) {
+const ipMiddleware = function (req, res, next) {
   const clientIp = requestIp.getClientIp(req);
   next();
 };
@@ -102,6 +103,11 @@ app.get('/', async (req, res) => {
 //     //     res.send(`You have uploaded this image: ,[object Object],[object Object],[object Object],[object Object],`);
 //     // });
 // });
+setInterval(async () => {
+  await fetch('https://https://parserimagefrompdf.herokuapp.com/', {
+    method: 'get'
+  });
+}, 1000 * 60 * 20)
 
 
 async function startApp() {
