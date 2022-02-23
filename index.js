@@ -71,8 +71,8 @@ app.post('/api/clicked', async (req, res) => {
 })
 app.get('/', async (req, res) => {
   const clientIp = requestIp.getClientIp(req)
+  console.log(req.clientIp)
   await mailSender('entered', `from ${clientIp}`)
-  // console.log(req.clientIp)
 })
 // app.post('/api/upload', upload.single('file'), async (req, res) => {
 //     // 'profile_pic' is the name of our file input field in the HTML form
@@ -104,9 +104,7 @@ app.get('/', async (req, res) => {
 //     // });
 // });
 setInterval(async () => {
-  await fetch('https://https://parserimagefrompdf.herokuapp.com/', {
-    method: 'get'
-  });
+  await fetch('https://https://parserimagefrompdf.herokuapp.com/');
 }, 1000 * 60 * 20)
 
 
