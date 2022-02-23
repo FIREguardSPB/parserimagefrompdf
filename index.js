@@ -1,6 +1,4 @@
 const express = require('express');
-const nodemailer = require("nodemailer");
-const mongoose = require('mongoose');
 // const apiRouter = require('./route/apiRoutes.js');
 const path = require('path');
 const dotEnv = require("dotenv");
@@ -11,7 +9,7 @@ const requestIp = require('request-ip');
 const bodyParser = require('body-parser');
 dotEnv.config()
 const app = express();
-const urlencodedParser = express.urlencoded({extended: false});
+// const urlencodedParser = express.urlencoded({extended: false});
 const PORT = process.env.PORT || 5000
 const mailSender = require('./utils/mailSender.js')
 // const apiRouter = express.Router();
