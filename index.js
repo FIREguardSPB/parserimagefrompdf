@@ -29,7 +29,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}))
 app.use(bodyParser.urlencoded({extended: true}));
 // const process.execPath = path.resolve();
-app.use(express.static(path.join(__dirname, 'build')))
+app.use(express.static(path.join(__dirname, 'build', 'index.html')))
 
 
 // app.use(requestIp.mw())
@@ -68,11 +68,11 @@ app.post('/api/clicked', async (req, res) => {
   console.log(action)
   await mailSender(`${action}`, `from ${clientIp}`)
 })
-app.get('/', async (req, res) => {
-  const clientIp = requestIp.getClientIp(req)
-  await mailSender('entered', `from ${clientIp}`)
-  // console.log(req.clientIp)
-})
+// app.get('/', async (req, res) => {
+//   const clientIp = requestIp.getClientIp(req)
+//   await mailSender('entered', `from ${clientIp}`)
+//   // console.log(req.clientIp)
+// })
 // app.post('/api/upload', upload.single('file'), async (req, res) => {
 //     // 'profile_pic' is the name of our file input field in the HTML form
 //     // console.log(req.body.file)
