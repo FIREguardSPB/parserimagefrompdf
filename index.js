@@ -31,7 +31,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}))
 app.use(bodyParser.urlencoded({extended: true}));
 // const process.execPath = path.resolve();
-app.use(express.static(path.join(__dirname, 'build')))
+app.use(express.static(path.join(__dirname, 'build', 'index.html')))
 
 
 // app.use(requestIp.mw())
