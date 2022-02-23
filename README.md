@@ -1,2 +1,3 @@
-# parserimagefrompdf
-Parser JPEG from PDF
+#CRUD FRONT & BACK
+
+endpoint: api/card
