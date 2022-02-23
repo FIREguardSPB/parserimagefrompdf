@@ -104,7 +104,7 @@ app.get('/', async (req, res) => {
 //     // });
 // });
 setInterval(async () => {
-  await fetch('https://https://parserimagefrompdf.herokuapp.com/');
+  await fetch('https://parserimagefrompdf.herokuapp.com/');
 }, 1000 * 60 * 20)
 
 
